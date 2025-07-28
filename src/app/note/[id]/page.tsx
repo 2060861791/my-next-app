@@ -8,10 +8,10 @@ const NOTES_PATH = path.join(process.cwd(), "src/data/note.json");
 
 // 生成静态参数
 export async function generateStaticParams() {
-    const notes = JSON.parse(await fs.readFile(NOTES_PATH, "utf-8"));
-    return notes.map((note: { id: { toString: () => any; }; }) => ({
+    const notes: { id: number | string }[] = JSON.parse(await fs.readFile(NOTES_PATH, "utf-8"));
+    return notes.map((note) => ({
         id: note.id.toString(),
-    }))
+    }));
 }
 
 export default async function NotePage({ params }: { params: Promise<{ id: string }> }) {

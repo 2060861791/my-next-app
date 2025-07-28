@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
 
     // 生成新 id（最大 id + 1）
     const maxId =
-      notes.length > 0 ? Math.max(...notes.map((n: any) => n.id)) : 0;
+      notes.length > 0 ? Math.max(...notes.map((n: { id: number }) => n.id)) : 0;
     const newNote = {
       id: maxId + 1,
       title,
