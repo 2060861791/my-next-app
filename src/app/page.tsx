@@ -12,8 +12,7 @@ export default async function Home() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1>📚 我的学习笔记</h1>
-        <p>这是一个简单的 Next.js 学习项目</p>
+        <h1>📚 这是一个简单的 Next.js 学习项目</h1>
       </header>
 
       <main className={styles.main}>
